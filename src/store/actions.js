@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO } from './types';
+import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from './types';
 
 let nextTodoId = 0;
 
@@ -13,6 +13,13 @@ export const addTodo = (text) => {
 export const deleteTodo = (id) => {
   return {
     type: DELETE_TODO,
+    id,
+  };
+};
+
+export const toggleTodo = (id) => {
+  return {
+    type: TOGGLE_TODO,
     id,
   };
 };

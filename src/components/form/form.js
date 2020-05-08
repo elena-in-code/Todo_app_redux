@@ -11,13 +11,22 @@ const Form = ({ addTodo }) => {
     <div className="form__wrapper">
       <input
         className="form__input"
-        onChange={(event) => setInputValue(event.target.value)}
+        onChange={(event) => {
+          setInputValue(event.target.value);
+        }}
         type="text"
         value={inputValue}
       />
       <button
         className="form__button"
-        onClick={hasInputValue ? () => addTodo(inputValue) : () => {}}
+        onClick={
+          hasInputValue
+            ? () => {
+                addTodo(inputValue);
+                setInputValue('');
+              }
+            : () => {}
+        }
       >
         Add
       </button>
