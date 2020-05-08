@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../../store/actions';
+import './form.css';
 
 const Form = ({ addTodo }) => {
   const [inputValue, setInputValue] = useState('');
 
   return (
-    <div>
+    <div className="form__wrapper">
       <input
+        className="form__input"
         onChange={(event) => setInputValue(event.target.value)}
         type="text"
         value={inputValue}
       />
-      <button onClick={() => addTodo(inputValue)}>Add</button>
+      <button className="form__button" onClick={() => addTodo(inputValue)}>
+        Add
+      </button>
     </div>
   );
 };

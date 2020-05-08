@@ -10,7 +10,7 @@ import './App.css';
 const App = () => (
   <Provider store={store}>
     <div className="App">
-      <h1>Todo List</h1>
+      <h1 className="app__title">Todo List</h1>
       <Form />
       <TodoList />
     </div>
