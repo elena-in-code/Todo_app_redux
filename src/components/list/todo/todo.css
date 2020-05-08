@@ -1,8 +1,24 @@
 .todo__wrapper {
   margin: 0 10px;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .todo__wrapper:not(:last-child) {
   border-bottom: 1px solid #f0efef;
+  justify-content: space-between;
+}
+
+.todo__button-delete {
+  padding: 7px;
+  border: 1px solid white;
+  color: #86888b;
+  font-size: inherit;
+  background: white;
+  font-weight: 600;
+}
+
+.todo__button-delete:hover {
+  cursor: pointer;
 }

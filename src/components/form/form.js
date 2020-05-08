@@ -5,6 +5,7 @@ import './form.css';
 
 const Form = ({ addTodo }) => {
   const [inputValue, setInputValue] = useState('');
+  const hasInputValue = inputValue.length > 0;
 
   return (
     <div className="form__wrapper">
@@ -14,7 +15,10 @@ const Form = ({ addTodo }) => {
         type="text"
         value={inputValue}
       />
-      <button className="form__button" onClick={() => addTodo(inputValue)}>
+      <button
+        className="form__button"
+        onClick={hasInputValue ? () => addTodo(inputValue) : () => {}}
+      >
         Add
       </button>
     </div>
